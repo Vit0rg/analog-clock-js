@@ -1,0 +1,133 @@
+:root
+{
+  --neutral: 0, 0%;
+  --rose: 320;
+}
+
+*, *::after, *::before
+{
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+}
+
+body
+{
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, hsl(var(--rose), 100%, 25%), hsl(var(--neutral), 5%));
+}
+
+header, footer
+{
+  height: 20vh;
+  width: 100%;
+  color: hsl(var(--neutral), 90%);
+  background-color: hsl(var(--neutral), 0%, .75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(1.5rem + 3vw);
+  letter-spacing: .3rem;
+}
+
+.clock
+{
+  position: relative;
+  aspect-ratio: 1 / 1;
+  height: calc(150px + 10rem);
+  background-color: hsl(var(--neutral), 0%, .75);
+  color: hsl(var(--neutral), 90%);
+  border-radius: 20rem;
+  border: .25rem solid hsl(var(--neutral), 5%);
+  box-shadow: 1rem .5rem hsl(var(--neutral), 10%, .7);
+  overflow: hidden;
+}
+
+.clock .number
+{
+  --rotation: 0;
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  font-size: 2rem;
+  text-align: center;
+  transform: rotate(var(--rotation));
+}
+
+.clock .number1
+{--rotation: 30deg;}
+.clock .number2
+{--rotation: 60deg;}
+.clock .number3
+{--rotation: 90deg;}
+.clock .number4
+{--rotation: 120deg;}
+.clock .number5
+{--rotation: 150deg;}
+.clock .number6
+{--rotation: 180deg;}
+.clock .number7
+{--rotation: 210deg;}
+.clock .number8
+{--rotation: 240deg;}
+.clock .number9
+{--rotation: 270deg;}
+.clock .number10
+{--rotation: 300deg;}
+.clock .number11
+{--rotation: 330deg;}
+
+.clock .hand
+{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid hsl(var(--neutral), 30%);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(1deg * var(--rotation)));
+}
+
+.clock::after
+{
+  content: '';
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: 50%;
+  left: 50%;
+  background-color: hsl(var(--neutral), 90%);
+  z-index: 10;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock .hand.second
+{
+  width: .25rem;
+  height: 48%; 
+  background-color: red;
+  z-index: 9;
+}
+
+.clock .hand.minute
+{
+  width: .75rem;
+  height: 40%; 
+  background-color: hsl(var(--neutral), 90%);
+  z-index: 8;
+}
+
+.clock .hand.hour
+{
+  width: 1rem;
+  height: 35%; 
+  background-color: hsl(var(--neutral), 90%);
+  z-index: 7;
+}
