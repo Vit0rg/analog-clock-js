@@ -27,7 +27,7 @@ Vit0rg
  
 ### About the project: 
 Analog clock developed in javascript.
-Page created based on the design and logic presented in the video [Build A Clock With JavaScript](https://youtu.be/Ki0XXrlKlHY
+Page created based on the design and logic presented in the video [Build A Clock With JavaScript](https://youtu.be/Ki0XXrlKlHY).
 
 ### Available at:
 [Github-page](https://vit0rg.github.io/analog-clock-js/)
